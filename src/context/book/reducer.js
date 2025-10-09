@@ -2,10 +2,12 @@
 
 import { ADD_BOOK, REMOVE_BOOK, SEARCH_BOOKS } from './actions';
 
+
 // This helper function stores the favoriteBook state in localStorage as a string
 function saveToLocalStorage(favBooks) {
   localStorage.setItem('favoriteBooks', JSON.stringify(favBooks))
 }
+
 
 const Reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -19,7 +21,7 @@ const Reducer = (state = initialState, action) => {
     }
 
     case REMOVE_BOOK: {
-      const updatedFavorites = state.favoriteBooks.filter(book => book.id !== action.payload);
+      const updatedFavorites = state.favoriteBooks.filter(book => book.id !== action.payload.id);
       saveToLocalStorage(updatedFavorites);
       return {
         ...state,

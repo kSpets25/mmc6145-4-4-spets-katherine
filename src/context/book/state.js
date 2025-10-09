@@ -8,8 +8,7 @@ const favoriteBooks = storedFavorites ? JSON.parse(storedFavorites) : [];
 
 const initialState = {
     bookSearchResults: [],
-    favoriteBooks: favoriteBooks
- 
-}
+    favoriteBooks: favoriteBooks 
+    }
 
 export default initialState;
