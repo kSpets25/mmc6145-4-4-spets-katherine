@@ -5,17 +5,17 @@ export const REMOVE_BOOK = 'REMOVE_BOOK';
 export const SEARCH_BOOKS = 'SEARCH_BOOKS';
 
 export const addBook = (book) => ({
-    type: ADD_BOOK,
+    action: ADD_BOOK,
     payload: book
 });
 
-export const removeBook = (bookId) => ({
-    type: REMOVE_BOOK,
+export const removeBook = (book) => ({
+    action: REMOVE_BOOK,
     payload: book
 });
 
 export const searchBooks = (books) => ({
-    type: SEARCH_BOOKS,
+    action: SEARCH_BOOKS,
     payload: books,
 })
 

@@ -10,9 +10,9 @@ function saveToLocalStorage(favBooks) {
 
 
 const Reducer = (state = initialState, action) => {
-  switch (action.type) {
+  switch (action.action) {
     case ADD_BOOK: {
-      const updatedFavorites = [...state.favoriteBooks, action.payload ];
+      const updatedFavorites = [...state.favoriteBooks, action.payload];
       saveToLocalStorage(updatedFavorites);
       return {
         ...state,
@@ -21,7 +21,7 @@ const Reducer = (state = initialState, action) => {
     }
 
     case REMOVE_BOOK: {
-      const updatedFavorites = state.favoriteBooks.filter(book => book.id !== action.payload.id);
+      const updatedFavorites = state.favoriteBooks.filter(book => book.id !== action.payload);
       saveToLocalStorage(updatedFavorites);
       return {
         ...state,
@@ -32,7 +32,7 @@ const Reducer = (state = initialState, action) => {
     case SEARCH_BOOKS: {
       return {
         ...state,
-        searchQuery: action.payload
+        bookSearchResults: action.payload
       };
     }
 
